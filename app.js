@@ -96,7 +96,7 @@ gsap.fromTo(".card,.profileCard",{
     opacity:0
 },{
     opacity:1,
-    x:70,
+    x:50,
     repeat:2,
     duration:1,
     yoyo:true,
