@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Time Tracking DashBoard</title>
+    <script src="app.js" defer></script>
     <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    
 </head>
 <body class="bg-black">
 
-<main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 m-4 md:m-8 lg:m-10">
+<main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 m-4 md:m-8 lg:m-10 ">
 
   <!-- Profile card -->
-  <section class="bg-[#3626A7] flex flex-col relative min-h-[320px] w-full max-w-xs md:max-w-sm lg:w-52 rounded-xl text-white row-span-2 p-6 md:px-10 mb-20">
+  <section class="bg-[#3626A7] flex flex-col relative min-h-[320px] w-full max-w-xs md:max-w-sm lg:w-52 rounded-xl text-white row-span-2 p-6 md:px-10 mb-20  shadow-lg shadow-green-600 profileCard">
     <div class="flex-1 flex flex-col items-center md:items-start">
       <img src="images/image-jeremy.png" alt="jeremy-pic" loading="lazy" class="w-16 h-16 border-2 rounded-full border-white mb-6">
       <p class="text-sm pt-2">Report for</p>
@@ -19,92 +22,121 @@
     </div>
     <!-- Time options absolutely positioned at the bottom, full width, touching edges -->
     <div class="absolute left-0 bottom-0 w-full bg-[#001242] rounded-b-xl px-4 md:px-7 py-4 flex flex-row md:flex-col justify-between md:justify-center items-center md:items-start gap-2">
-      <p class="text-blue-300 cursor-pointer">Daily</p>
-      <p class="text-white cursor-pointer">Weekly</p>
-      <p class="text-blue-300 cursor-pointer">Monthly</p>
+      <p class="text-blue-300 cursor-pointer dailyBtn hover:text-white">Daily</p>
+      <p class="text-blue-300 cursor-pointer weeklyBtn hover:text-white">Weekly</p>
+      <p class="text-blue-300 cursor-pointer monthlyBtn hover:text-white">Monthly</p>
     </div>
   </section>
 
   <!-- Six cards -->
+   <section class="card">
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
-    <div class="bg-[#D57A66] h-12 rounded-t-md flex justify-end items-center px-4">
+    <div class="bg-[#D57A66] h-12 rounded-t-md flex justify-end items-center px-4 shadow-2xl shadow-[#D57A66]">
       <img src="images/icon-work.svg" alt="" class="w-10 md:w-12">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-md shadow-green-600">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Work</div>
+        <div class="text-white mt-5 mb-5 card-title">Work</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">32hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 36hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">32hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base  card-previous">Last Week - 36hrs</p>
     </div>
   </div>
+</section>
+
+
+<section class="card">
+
+
+
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
     <div class="bg-[#6874E8] h-12 rounded-t-md flex justify-end items-center px-4">
       <img src="images/icon-play.svg" alt="" class="w-10 md:w-12">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-md shadow-blue-500">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Play</div>
+        <div class="text-white mt-5 mb-5 card-title">Play</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">10hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 10hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">10hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base  card-previous">Last Week - 10hrs</p>
     </div>
   </div>
+
+</section>
+
+<section class="card">
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
-    <div class="bg-[#CE7B91] h-12 rounded-t-md flex justify-end items-center px-4">
+    <div class="bg-[#CE7B91] h-12 rounded-t-md flex justify-end items-center px-4 ">
       <img src="images/icon-study.svg" alt="" class="w-10 md:w-12">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-emerald-400 shadow-md">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Study</div>
+        <div class="text-white mt-5 mb-5 card-title">Study</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">4hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 7hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">4hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base card-previous">Last Week - 7hrs</p>
     </div>
   </div>
+
+
+  </section>
+
+<section class="card">
+
+
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
     <div class="bg-[#34D1BF] h-12 rounded-t-md flex justify-end items-center px-4">
       <img src="images/icon-exercise.svg" alt="" class="w-10 md:w-12">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-md shadow-amber-600">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Excercise</div>
+        <div class="text-white mt-5 mb-5 card-title">Excercise</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">4hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 5hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">4hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base  card-previous">Last Week - 5hrs</p>
     </div>
   </div>
+
+  </section>
+
+  <section class="card">
+
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
     <div class="bg-[#7F2CCB] h-12 rounded-t-md flex justify-end items-center px-4">
       <img src="images/icon-social.svg" alt="" class="w-8 md:w-10">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-md shadow-fuchsia-600">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Social</div>
+        <div class="text-white mt-5 mb-5 card-title">Social</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">5hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 10hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">5hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base  card-previous">Last Week - 10hrs</p>
     </div>
   </div>
+
+  </section>
+
+<section class="card">
+
   <div class="w-full max-w-xs md:max-w-sm lg:w-56">
     <div class="bg-[#FFB238] h-12 rounded-t-md flex justify-end items-center px-4">
       <img src="images/icon-self-care.svg" alt="" class="w-10 md:w-12 sepia-100">
     </div>
-    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl">
+    <div class="bg-[#001242] h-44 ps-6 md:ps-10 rounded-b-3xl shadow-md shadow-teal-600">
       <div class="flex justify-between items-center">
-        <div class="text-white mt-5 mb-5">Self Care</div>
+        <div class="text-white mt-5 mb-5 card-title">Self Care</div>
         <img src="images/icon-ellipsis.svg" alt="" class="w-4 h-1 me-4 cursor-pointer">
       </div>
-      <p class="text-white text-3xl md:text-5xl">2hrs</p>
-      <p class="text-white mt-3 text-sm md:text-base">Last Week - 2hrs</p>
+      <p class="text-white text-3xl md:text-5xl card-current">2hrs</p>
+      <p class="text-white mt-3 text-sm md:text-base  card-previous">Last Week - 2hrs</p>
     </div>
   </div>
-
+</section>
 </main>
 
 </body>
