@@ -106,10 +106,10 @@ gsap.fromTo(
 
    
 
-    duration:1,
+    
 
    
-    delay:0.5,
+   
 
   stagger : {
 
