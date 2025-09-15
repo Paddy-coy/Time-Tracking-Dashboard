@@ -104,11 +104,11 @@ gsap.fromTo(
 
     y:50,
 
-    repeat:2,
+   
 
     duration:1,
 
-    yoyo:true,
+   
     delay:0.5,
 
   stagger : {
