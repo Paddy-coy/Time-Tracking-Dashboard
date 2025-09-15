@@ -104,16 +104,9 @@ gsap.fromTo(
 
     y:50,
 
-   
-
-    
-
-   
-   
-
   stagger : {
 
-    amount:1,
+    amount:0.5,
 
     from:"random",
 
