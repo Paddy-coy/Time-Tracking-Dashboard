@@ -96,22 +96,26 @@ async function renderMonthly() {
 gsap.fromTo(
   ".card, .profileCard", {
 
-    opacity: 0,
+    opacity: 0.5,
    
   },{
 
     opacity:1,
-
+   repeat:2,
+   yoyo:true,
     y:50,
+    rotate:360,
+    duration:1,
+
 
   stagger : {
 
     amount:0.5,
 
-    from:"random",
-
+    from:"center",
+   
   },
 
-  ease : "power1.out", 
+  ease : "power4.out", 
 
 });
