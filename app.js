@@ -92,18 +92,33 @@ async function renderMonthly() {
 
 //Gsap Animation//
 
-gsap.fromTo(".card,.profileCard",{
-    opacity:0
-},{
+
+gsap.fromTo(
+  ".card, .profileCard", {
+
+    opacity: 0,
+   
+  },{
+
     opacity:1,
-    x:50,
+
+    y:50,
+
     repeat:2,
+
     duration:1,
+
     yoyo:true,
+    delay:0.5,
+
   stagger : {
+
     amount:1,
+
     from:"random",
+
   },
-  ease : "power1.out",
-  
-})
+
+  ease : "power1.out", 
+
+});
